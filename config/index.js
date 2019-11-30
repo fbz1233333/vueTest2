@@ -7,11 +7,17 @@ const path = require('path')
 module.exports = {
   dev: {
 
-    // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
+    proxyTable: {
+      '/app': {
+        target: 'http://localhost:9200', //源地址
+        changeOrigin: true, //改变源
+        pathRewrite: {
+          '^/app': 'http://localhost:9200' //路径重写
+        }
+      }
+    },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
