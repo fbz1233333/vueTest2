@@ -11,10 +11,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/app': {
-        target: 'http://localhost:9200', //源地址
+        target: 'http://localhost:8200', //源地址
         changeOrigin: true, //改变源
         pathRewrite: {
-          '^/app': 'http://localhost:9200' //路径重写
+          '^/app': 'http://localhost:8200' //路径重写
         }
       }
     },
